@@ -1,0 +1,36 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/employee/store-update" method="POST" autocomplete="off" enctype="multipart/form-data">
+    <input type="hidden" name="_id" value="{{employee._id}}">
+    <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text"  name="fullName" id="fullName" class="form-control" placeholder="Full Name" value="{{employee.fullName}}">
+        <div class="text-danger">{{employee.fullNameError}}</div>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email"  name="email" id="email" class="form-control" placeholder="Email" value="{{employee.email}}">
+        <div class="text-danger">{{employee.emailError}}</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="mobile">Mobile</label>
+            <input type="text" name="mobile" id="mobile" class="form-control" placeholder="Mobile" value="{{employee.mobile}}">
+            <div class="text-danger">{{employee.mobileError}}</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" class="form-control" placeholder="City" value="{{employee.city}}">
+            <div class="text-danger">{{employee.cityError}}</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="logs">Logs</label>
+        <input type="file" name="logs" id="logs" class="form-control">
+        <div class="text-danger">{{employee.logsError}}</div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/employee/list"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+</form>
