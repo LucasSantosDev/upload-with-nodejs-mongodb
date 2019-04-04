@@ -27,6 +27,10 @@ router.post('/store-update', upload.single('logs'), (req, res) => {
     }
 })
 
+router.get('/', (req, res) => {
+    res.redirect('list')
+})
+
 router.get('/list', (req, res) => {
     Employee.find((err, docs) => {
         if (!err) {
